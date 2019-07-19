@@ -14,28 +14,22 @@ int mod_string(char *str1, char *str, FILE *fp){
 	
 	FILE *ff;
 	ff = fopen(name, "w");
-	char ch;
-	int j = 0, n_p = 0, size = 0;
-	while ((ch=fgetc(fp)) != EOF) {
+	
+	int count = atoi(str1);
+
+	int n_p = 0;
+	
+	
+	while (fgets(buf, 100, fp) != NULL) {
 		//printf("%c\n", ch);
-		buf[j] = ch;
-		if (buf[j] == ' ')
-			n_p++;
-		size++;
-		if (buf[j] == '\n'){
-			j = 0;
-			if (n_p < atoi(str1)){
-				while (j < size){
-					fputc(buf[j], ff);
-					j++;
-				}	
-			}
-			j = 0;
-			n_p = 0;
-			size = 0;
+		for (int i = 0; i < strlen(buf); i++){
+			if (buf[i] == ' ')
+				n_p++;
 		}
-		else
-			j++;
+		if (n_p < count){
+			fputs(buf, ff);
+		}
+		n_p = 0;
 	}
 	
 	if(fclose(ff)){
