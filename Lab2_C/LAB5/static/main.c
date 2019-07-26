@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include "/home/autdan/Labs/Lab2_C/LAB5/libs/lib_three.h"
-#include "/home/autdan/Labs/Lab2_C/LAB5/libs/lib_four.h"
+#include "../libs/lib_three.h"
+#include "../libs/lib_four.h"
 
 int main (int argc, char *argv[]){
 	if(NULL == argv[1]) {
