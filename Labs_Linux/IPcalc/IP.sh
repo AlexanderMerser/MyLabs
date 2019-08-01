@@ -326,6 +326,6 @@ elif [ $ipd1 -ge 224 -a $ipd1 -le 255 -a $masd1 == "239" -a $masd2 == "255" -a $
 elif [ $ipd1 -ge 240 -a $ipd1 -le 255 -a $masd1 == "247" -a $masd2 == "255" -a $masd3 == "255" -a $masd4 == "255" ]; then
 	class=$(echo 'E');
 else
-	class=$(echo -e "C\033[37m, Prvate Internet");
+	class=$(echo -e "C\033[37m, Private Internet");
 fi
 echo -e "\033[37mHosts/Net:\t\033[34m$resfinal\t\t\t\033[35m Class $class";

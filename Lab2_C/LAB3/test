@@ -1,17 +1,16 @@
-4
-Хлеб
-12.07.2019
-30
-2
-Вода
-09.03.2019
-25
-10
-Шампунь
-03.05.2018
-300
-1
-Конфеты
-11.06.2015
-10
-30
+TARGET = main
+LIBS = ../libs
+CF = -c -Wall -std=c99
+CALC = libcalc
+all : $(CALC)
+$CALC : $(LIBS)/lib_four.c $l(LIBS)/lib_four.h $(LIBS)/lib_three.c $(LIBS) /lib_trhee.h
+	gcc $(CF) $(LIBS)/lib_four.c -o $(LIBS)/lib_four.o
+	gcc $(CF) $(LIBS)/lib_three.c -o $(LIBS)/lib_three.o
+	ar rc $(CALC).a lib_four.o lib_three.o
+	ranlib $(CALC).a
+main : main.o
+	gcc main.o -L/home/autdan/Labs/Lab2_C/LAB5/libs -lcalc -o main
+main.o : main.c
+	gcc $(CF) -Wall -std=c99 main.c
+clean :
+	rm main.o main
